@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import vue.BadgeMatelot.COULEUR;
 
 public class VueTableauHonneur extends Vue {
 
@@ -32,7 +33,7 @@ public class VueTableauHonneur extends Vue {
 	public void activerControles()
 	{
 		super.activerControles();
-		BadgeMatelot badgePomme = new BadgeMatelot();
+		BadgeMatelot badgePomme = new BadgeMatelot().medievale().auDaphinBleu().deCouleur(COULEUR.NOIR).Message("yo");
 		AnchorPane espaceTravail = (AnchorPane)lookup("#espace-travail");
 		espaceTravail.getChildren().add(badgePomme);
 		
