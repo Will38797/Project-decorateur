@@ -33,7 +33,7 @@ public class VueTableauHonneur extends Vue {
 	public void activerControles()
 	{
 		super.activerControles();
-		BadgeMatelot badgePomme = new BadgeMatelot().medievale().auDaphinBleu().deCouleur(COULEUR.NOIR).Message("yo");
+		BadgeMatelot badgePomme = new BadgeMatelot().medievale().auPommeBleu().deCouleur(COULEUR.NOIR).Message("yo");
 		AnchorPane espaceTravail = (AnchorPane)lookup("#espace-travail");
 		espaceTravail.getChildren().add(badgePomme);
 		

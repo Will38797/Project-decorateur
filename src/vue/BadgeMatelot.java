@@ -17,35 +17,38 @@ public class BadgeMatelot extends AnchorPane{
 		
 			
 
-			ImageView ecusson = new ImageView();
+			ecusson = new ImageView();
 			this.setArmoirie(ARMOIRIE_FORME.ECUSSON);
 			this.getChildren().add(ecusson);
 			
-			ImageView vagues = new ImageView();
+		    vagues = new ImageView();
 			this.setVagues(FORME_VAGUES.ONDULEES);
 			this.getChildren().add(vagues);
 			
-			ImageView dauphin = new ImageView();
-			this.setDauphin(COULEUR_DAUPHIN.ROSE);
-			this.getChildren().add(dauphin);
+			pomme = new ImageView();
+			this.setPomme(COULEUR_POMME.ROUGE);
+			this.getChildren().add(pomme);
 			
 			
 			
-			Label motto = new Label();
-			this.setMotto();
+			motto = new Label();
+			this.setMotto("FAIRE FACE");
+			motto.setStyle("-fx-font:25px Tahoma; -fx-font-weight:bold;-fx-text-fill:white;");
+			motto.setLayoutX(87);
+			motto.setLayoutY(60);
 			this.getChildren().add(motto);
 			
 		}
 		protected Label motto;
-		public void setMotto() {
+		public void setMotto(String message) {
 			
-			motto.setStyle("-fx-font:25px Tahoma; -fx-font-weight:bold; fx-text-fill:white;");
-			motto.setLayoutX(87);
-			motto.setLayoutY(60);
+			motto.setText(message);
 		}
+		
 			protected ImageView vagues;
 			public enum FORME_VAGUES{RONDES, ONDULEES}
-		public void setVagues(FORME_VAGUES forme) {
+		
+			public void setVagues(FORME_VAGUES forme) {
 			
 			if(FORME_VAGUES.ONDULEES == forme)
 				vagues.setImage(new Image("vue/badge/vagues-ondulees.png"));
@@ -55,7 +58,8 @@ public class BadgeMatelot extends AnchorPane{
 			vagues.setLayoutX(54);
 			vagues.setLayoutY(240);
 		}
-		protected ImageView ecusson;
+		
+			protected ImageView ecusson;
 		public enum ARMOIRIE_FORME{RONDE,ECUSSON}
 		public void setArmoirie(ARMOIRIE_FORME forme)
 		{
@@ -65,26 +69,26 @@ public class BadgeMatelot extends AnchorPane{
 				ecusson.setImage(new Image("vue/badge/armoirie-ronde.png"));
 		}		
 		
-		protected ImageView dauphin;
-		public enum COULEUR_DAUPHIN{BLEU,ROSE}
-		public void setDauphin(COULEUR_DAUPHIN couleur) {
-			if(COULEUR_DAUPHIN.ROSE == couleur)  dauphin.setImage(new Image("vue/badge/dauphin-rose.png"));
-			dauphin.setImage(new Image("vue/badge/dauphin-bleu.png"));
-			dauphin.setLayoutX(70);
-			dauphin.setLayoutY(90);
-			dauphin.setScaleX(-1.5);
-			dauphin.setScaleY(1.5);
+		protected ImageView pomme;
+		public enum COULEUR_POMME{VERT,ROUGE}
+		public void setPomme(COULEUR_POMME couleur) {
+			if(COULEUR_POMME.ROUGE == couleur)  pomme.setImage(new Image("vue/badge/PommeRouge.png"));
+			pomme.setImage(new Image("vue/badge/pommeVert.png"));
+			pomme.setLayoutX(-450);
+			pomme.setLayoutY(-450);
+			pomme.setScaleX(0.1);
+			pomme.setScaleY(0.1);
 		}
-		public BadgeMatelot auDaphinRose() {
-			this.setDauphin(COULEUR_DAUPHIN.ROSE);
+		public BadgeMatelot auPommeRose() {
+			this.setPomme(COULEUR_POMME.ROUGE);
 			return this;
 		}
-		public BadgeMatelot auDaphinBleu() {
-			this.setDauphin(COULEUR_DAUPHIN.BLEU);
+		public BadgeMatelot auPommeBleu() {
+			this.setPomme(COULEUR_POMME.VERT);
 			return this;
 		}
-		public BadgeMatelot auDauphin(COULEUR_DAUPHIN couleur) {
-			this.setDauphin(couleur);
+		public BadgeMatelot auPomme(COULEUR_POMME couleur) {
+			this.setPomme(couleur);
 			return this;
 		}
 		public BadgeMatelot ronde() {
